@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../static/styles/style.css">
 </head>
 <body>
-    <header>
+    <div class="overlay"></div>
+    <header class="wrapper">
         <h1>Blogdiggity</h1>
+    </header>
+    <main class="wrapper">
         <section class="login">
             <h2>Log In to Your Account</h2>
             <form action="">
@@ -22,11 +25,16 @@
                     <input type="password" id="password" name="password" required>
                     <label for="password">Password</label>
                 </div>
-                <a href="#" class="forgotPassword">Forgot password?</a>
+                <div class="showPassword">
+                    <input type="checkbox" id="togglePassword" onClick="togglePassword">
+                    <label for="togglePassword">Show Password</label>
+                </div>
                 <input type="submit" value="Log In">
             </form>
             <p>Need an account? <a href="#" class="signUp">Sign up</a></p>
         </section>
-    </header>
+    </main>
+
+<script src="../static/scripts/script.js"></script>
 </body>
 </html>
