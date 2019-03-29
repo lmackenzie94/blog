@@ -1,18 +1,27 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import psycopg2
+import os
 
 app = Flask(__name__)
 
-user = {'firstname': 'admin',
-        'lastname': 'user',
-        'username': 'admin',
-        'password': 'admin123'}
+def psql_connect(): 
+    return psycopg2.connect(host=os.environ['PSQL_HOST'],
+                            database=os.environ['PSQL_DATABASE'], 
+                            user=os.environ['PSQL_USER'],
+                            password=os.environ['PSQL_PASSWORD'])
 
 def valid_login(username, password):
+    conn = psql_connect()
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM users WHERE username == ' + username + ' LIMIT 1')
+    
+    #if cursor.fetchone() is not None:
+        
     if username == user['username'] and password == user['password']:
         return True
-    
     return False
 
 @app.route('/', methods=['POST', 'GET'])
