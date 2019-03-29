@@ -1,0 +1,107 @@
+// ACCESSIBILITY STYLES
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+// VARIABLES
+
+$baseFontColour: #212121;
+$buttonColour: #81e2d2;
+
+$bodyFont: 'Roboto', sans-serif;
+$headerFont: 'Lalezar', cursive;
+
+// BASE STYLES
+
+html {
+    font-size: 125%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: $bodyFont;
+    font-weight: 400;
+    background: url('../../assets/background.jpg') center no-repeat;
+    background-size: cover;
+    color: $baseFontColour;
+    letter-spacing: .03rem;
+    line-height: 1.6;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: $headerFont;
+    margin: 0;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+// LOGIN FORM STYLES
+
+.login {
+    width: 40%;
+    min-width: 400px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        input {
+            margin: 15px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid $baseFontColour;
+            border-radius: 5px;
+            &:focus + label {
+                background: $buttonColour;
+                top: 45px;
+                font-size: .5rem;
+                color: $baseFontColour;
+            }
+        }
+        input[type="submit"] {
+            background: linear-gradient(to bottom, $buttonColour, darken($buttonColour, 20%));
+            border: none;
+            width: 80%;
+            &:hover,
+            &:focus {
+                background: linear-gradient(to bottom, darken($buttonColour, 20%), darken($buttonColour, 30%));
+            }
+        }
+        >div {
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            >label {
+                position: absolute;
+                width: 100%;
+                font-size: 0.8rem;
+                top: 25px;
+                color: grey;
+                left: 0;
+                text-align: left;
+                padding-left: 10px;
+            }
+        }
+
+    }
+}
+
+.forgotPassword {
+    display: block;
+    width: 80%;
+    text-align: right;
+}
