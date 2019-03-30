@@ -69,7 +69,7 @@
                 position: absolute;
                 width: 100%;
                 font-size: 0.8rem;
-                top: 10px;
+                top: 15px;
                 color: grey;
                 left: 0;
                 text-align: left;
@@ -85,7 +85,8 @@
             }
         }
     }
-    .signUp {
+    .signUp,
+    .signIn {
         color: darken($accentColour, 30%);
     }
 }
