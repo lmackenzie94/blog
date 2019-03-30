@@ -1,0 +1,54 @@
+// ACCESSIBILITY STYLES
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+// VARIABLES
+
+$baseFontColour: #212121;
+$accentColour: #81e2d2;
+$bodyFont: 'Roboto', sans-serif;
+$headerFont: 'Lalezar', cursive;
+
+// BASE STYLES
+
+html {
+    font-size: 125%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: $bodyFont;
+    font-weight: 400;
+    color: $baseFontColour;
+    letter-spacing: .03rem;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 1100px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.logo:hover h1,
+.logo:focus h1 {
+    color: $accentColour;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-family: $headerFont;
+    text-transform: uppercase;
+    transition: all .3s linear;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    // font-family: $headerFont;
+}
+
+a {
+    text-decoration: none;
+}

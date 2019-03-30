@@ -1,174 +1,29 @@
-// ACCESSIBILITY STYLES
+// INDEX STYLES
 
-.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
-
-// VARIABLES
-
-$baseFontColour: #212121;
-$accentColour: #81e2d2;
-$bodyFont: 'Roboto', sans-serif;
-$headerFont: 'Lalezar', cursive;
-
-// BASE STYLES
-
-html {
-    font-size: 125%;
-}
-
-body {
+.index {
     min-height: 100vh;
-    font-size: 1rem;
-    font-family: $bodyFont;
-    font-weight: 400;
     background: url('../../assets/background.jpg') center no-repeat;
     background-size: cover;
-    color: $baseFontColour;
-    letter-spacing: .03rem;
-    line-height: 1.6;
     position: relative;
-}
-
-.overlay {
-    background: rgba(0,0,0,0.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.wrapper {
-    max-width: 1100px;
-    width: 95%;
-    margin: 0 auto;
-}
-
-h1 {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    font-family: $headerFont;
-    padding: 20px 0;
-    margin: 0;
-    color: white;
-    text-align: left;
-    border-radius: 10px;
-}
-
-h2 {
-    margin: 0;
-}
-
-// LOGIN FORM STYLES
-
-.login {
-    width: 500px;
-    background: white;
-    text-align: center;
-    border-radius: 10px;
-    padding: 20px 10px;
-    margin-top: 40px;
-    h2 {
-        margin: 0 0 10px 0;
-        font-size: 1.5rem;
+    .overlay {
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
     }
-    form {
+    main {
         display: flex;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
-        input[type="text"],
-        input[type="password"] {
-            padding: 10px 10px 20px 10px;
-            width: 100%;
-            border: 1px solid $baseFontColour;
-            border-radius: 5px;
-            position: relative;
-            letter-spacing: .03rem;
-            top: 0;
-            left: 0;
-            background: transparent;
-            z-index: 1;
-            transition: all .2s linear;
-            &:focus {
-                border-color: $accentColour;
-            }
-            &:focus + label {
-                background: $accentColour;
-                top: 40px;
-                font-size: .5rem;
-                color: $baseFontColour;
-                z-index: 2;
-                border-radius: 0 0 5px 5px;
-            }
-            &:valid {
-                background: white;
-            }
-        }
-        input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.3);
-        }
-        input[type="submit"] {
-            background: linear-gradient(to bottom, $accentColour, darken($accentColour, 20%));
-            border: none;
-            border-radius: 5px;
-            width: 80%;
-            padding: 15px;
-            margin-top: 10px;
-            &:hover,
-            &:focus {
-                background: linear-gradient(to bottom, darken($accentColour, 20%), darken($accentColour, 30%));
-            }
-        }
-        >div:not(.showPassword) {
-            position: relative;
-            overflow: hidden;
-            width: 80%;
-            margin: 10px 0;
-            border-radius: 5px;
-            >label {
-                position: absolute;
-                width: 100%;
-                font-size: 0.8rem;
-                top: 10px;
-                color: grey;
-                left: 0;
-                text-align: left;
-                padding-left: 10px;
-                transition: all .2s linear;
-            }
-        }
-        .showPassword {
-            display: flex;
-            width: 80%;
-            label {
-                font-size: .8rem;
-            }
-        }
     }
-    .signUp {
-        color: darken($accentColour, 30%);
-        text-decoration: none;
-    }
-}
-
-// INDEX MEDIA QUERIES
-
-@media (max-width: 600px) {
-    .login {
-        width: 90%;
-    }
-}
-
-@media (max-width: 600px) {
-    .login h2 {
-        font-size: 1rem;
+    h1 {
+        font-size: 1.5rem;
+        padding: 20px 0;
+        color: white;
+        text-align: left;
     }
 }
