@@ -106,6 +106,15 @@
     }
 }
 
+.passwordError {
+    font-size: .6rem;
+    color: red;
+    width: 80%;
+    text-align: left;
+    margin-top: 0;
+    display: none;
+}
+
 // FORM MEDIA QUERIES
 
 @media (max-width: 600px) {

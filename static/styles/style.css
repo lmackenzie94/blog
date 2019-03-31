@@ -388,6 +388,15 @@ a {
   color: red;
 }
 
+.passwordError {
+  font-size: .6rem;
+  color: red;
+  width: 80%;
+  text-align: left;
+  margin-top: 0;
+  display: none;
+}
+
 @media (max-width: 600px) {
   .form {
     width: 90%;

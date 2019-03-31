@@ -2,6 +2,8 @@ const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
 const match = document.querySelector('.passwordMatch');
 const checkbox = document.getElementById('togglePassword');
+const passwordError = document.querySelector('.passwordError');
+const signUpButton = document.getElementById('signUpButton');
 
 const togglePassword = () => {
     if (confirmPassword === null) {
@@ -14,7 +16,13 @@ const togglePassword = () => {
 
 const passwordMatch = () => {
     if (confirmPassword === null) return;
-    password.value === confirmPassword.value ? (match.innerHTML = '<i class="fas fa-check-circle"></i>') : (match.innerHTML = '<i class="fas fa-times-circle"></i>');
+    password.value === confirmPassword.value 
+    ? (match.innerHTML = '<i class="fas fa-check-circle"></i>') 
+    && (passwordError.style.display = "none")
+    && (signUpButton.disabled = false)
+    : (match.innerHTML = '<i class="fas fa-times-circle"></i>') 
+    && (passwordError.style.display = "block")
+    && (signUpButton.disabled = true);
 }
 
 password.addEventListener('change', passwordMatch);
